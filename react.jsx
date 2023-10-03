@@ -15,7 +15,7 @@ const RockPaperScissors = ({ contractAddress }) => {
         try {
             const transaction = await contract.play(selectedMove, { value: ethers.utils.parseEther('0.0001') });
             await transaction.wait();
-            const response = await axios.get(`https://api.bscscan.com/api?module=account&action=txlist&address=${signer._address}&startblock=0&endblock=99999999&sort=desc&apikey=YourBscScanApiKey`);
+            const response = await axios.get(`https://api.bscscan.com/api?module=account&action=txlist&address=${signer._address}&startblock=0&endblock=99999999&sort=desc&apikey=ETKHF7C3RTVQA7F`);
             setResult(response.data.result[0].status === "0x1" ? "You Win!" : "You Lose!");
         } catch (error) {
             setResult("Error occurred: " + error.message);
